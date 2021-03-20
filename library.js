@@ -45,10 +45,14 @@
 	 *
 	 *   `OAUTH__ID=someoauthid OAUTH__SECRET=youroauthsecret node app.js`
 	 */
+	 const oauth = {
+		 "id": "nodebb",
+	     "secret": "123"
+	 };
 
 	const constants = Object.freeze({
-		type: '',	// Either 'oauth' or 'oauth2'
-		name: '',	// Something unique to your OAuth provider in lowercase, like "github", or "nodebb"
+		type: 'oauth2',	// Either 'oauth' or 'oauth2'
+		name: 'nodebb',	// Something unique to your OAuth provider in lowercase, like "github", or "nodebb"
 		oauth: {
 			requestTokenURL: '',
 			accessTokenURL: '',
@@ -57,12 +61,12 @@
 			consumerSecret: nconf.get('oauth:secret'),	// don't change this line
 		},
 		oauth2: {
-			authorizationURL: '',
-			tokenURL: '',
+			authorizationURL: 'https://localhost:44328/',
+			tokenURL: 'https://localhost:44328/token',
 			clientID: nconf.get('oauth:id'),	// don't change this line
 			clientSecret: nconf.get('oauth:secret'),	// don't change this line
 		},
-		userRoute: '',	// This is the address to your app's "user profile" API endpoint (expects JSON)
+		userRoute: 'https://localhost:44328/connect/userinfo',	// This is the address to your app's "user profile" API endpoint (expects JSON)
 	});
 
 	const OAuth = {};
