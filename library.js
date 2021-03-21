@@ -61,12 +61,12 @@
 			consumerSecret: nconf.get('oauth:secret'),	// don't change this line
 		},
 		oauth2: {
-			authorizationURL: 'https://localhost:44328/',
-			tokenURL: 'https://localhost:44328/token',
+			authorizationURL: 'https://localhost:44310/connect/authorize',
+			tokenURL: 'https://localhost:44310/connect/token',
 			clientID: nconf.get('oauth:id'),	// don't change this line
 			clientSecret: nconf.get('oauth:secret'),	// don't change this line
 		},
-		userRoute: 'https://localhost:44328/connect/userinfo',	// This is the address to your app's "user profile" API endpoint (expects JSON)
+		userRoute: 'https://localhost:44310/connect/userinfo',	// This is the address to your app's "user profile" API endpoint (expects JSON)
 	});
 
 	const OAuth = {};
